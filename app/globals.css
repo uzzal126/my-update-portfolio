@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+ --color-primary: #2e3280;
+  --color-secondary: #5945e6 ;
+  --color-heading: #222222;
+  --color-paragraph: #364153;
+}
+
+body {
+  @apply bg-white text-gray-700  text-sm;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.container-fluid {
+  padding: 0 15px;
+  margin: 0 auto;
+}

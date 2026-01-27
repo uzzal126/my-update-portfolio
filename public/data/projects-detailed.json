@@ -1,0 +1,89 @@
+[
+  {
+    "id": "pd-1",
+    "title": "Niyog - Job Platform",
+    "description": "Architected and optimized high-performance job portal interface serving 200k+ users with seamless user experiences. Designed modular frontend architecture to handle large-scale candidate and employer data with advanced search and filtering capabilities.",
+    "technologies": [
+      "Vue.js",
+      "Nuxt.js",
+      "JavaScript",
+      "Pinia",
+      "Tailwind CSS",
+      "RESTful APIs"
+    ],
+    "features": [
+      "Optimized frontend performance for large candidate datasets",
+      "Advanced job search and filtering system",
+      "Real-time data synchronization",
+      "Modular UI architecture for scalability",
+      "35%+ improved page load speed through lazy loading and code splitting",
+      "Simplified recruitment workflows with efficient state management",
+      "Responsive design for all devices"
+    ],
+    "liveLink": "https://niyog.co/",
+    "githubLink": "",
+    "image": "/images/projects/niyog.jpg",
+    "category": "job-platform",
+    "year": "2024"
+  },
+  {
+    "id": "pd-2",
+    "title": "Niyo - AI-Powered Recruitment Application",
+    "description": "Engineered a cutting-edge AI-driven recruitment platform with real-time candidate tracking and advanced matching algorithms. Spearheaded cross-functional teams to deliver enterprise-grade features while maintaining high code quality and architectural standards.",
+    "technologies": [
+      "Vue.js",
+      "Nuxt.js",
+      "JavaScript",
+      "Pinia",
+      "Tailwind CSS",
+      "WebSocket API",
+      "RESTful APIs"
+    ],
+    "features": [
+      "Real-time application tracking with WebSocket integration",
+      "AI-matching workflows for candidate-job alignment",
+      "Engineered scalable state management for complex workflows",
+      "~40% faster dashboard interactions through performance optimization",
+      "Real-time synchronization for AI-generated insights",
+      "Enterprise-grade security and data handling",
+      "Advanced analytics and reporting dashboard",
+      "Modular component architecture"
+    ],
+    "liveLink": "https://niyoai.com/",
+    "githubLink": "",
+    "image": "/images/projects/niyo.jpg",
+    "category": "recruitment-platform",
+    "year": "2024"
+  },
+  {
+    "id": "pd-3",
+    "title": "WebManza - No-Code eCommerce Platform",
+    "description": "Architected a modular no-code eCommerce builder using Next.js, enabling 150+ entrepreneurs to deploy scalable, SEO-optimized storefronts with zero coding. Built high-performance drag-and-drop editor for real-time store customization.",
+    "technologies": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "SSR",
+      "ISR"
+    ],
+    "features": [
+      "Drag-and-drop store builder with real-time previews",
+      "Complex state management with Redux for dynamic configurations",
+      "40% performance boost through SSR and ISR implementation",
+      "95+ Lighthouse SEO score for user-generated sites",
+      "30% improved code reusability via scalable UI component library",
+      "Automated SEO meta-tagging and structured data integration",
+      "Theme customization system with 50+ pre-built templates",
+      "Product management with inventory tracking",
+      "Payment gateway integration",
+      "Mobile-first responsive design"
+    ],
+    "liveLink": "https://webmanza.com/",
+    "githubLink": "",
+    "image": "/images/projects/webmanza.jpg",
+    "category": "ecommerce-platform",
+    "year": "2024"
+  }
+]
