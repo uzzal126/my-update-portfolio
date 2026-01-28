@@ -1,13 +1,13 @@
 [
   {
     "id": "pd-1",
-    "title": "Niyog - Job Platform",
+    "title": "Niyog - High-Performance Job Platform",
     "description": "Architected and optimized high-performance job portal interface serving 200k+ users with seamless user experiences. Designed modular frontend architecture to handle large-scale candidate and employer data with advanced search and filtering capabilities.",
     "technologies": [
       "Vue.js",
       "Nuxt.js",
       "JavaScript",
-      "Pinia",
+      "Vuex",
       "Tailwind CSS",
       "RESTful APIs"
     ],
@@ -20,11 +20,9 @@
       "Simplified recruitment workflows with efficient state management",
       "Responsive design for all devices"
     ],
-    "liveLink": "https://niyog.co/",
+    "liveLink": "https://niyog.co",
     "githubLink": "",
-    "image": "/images/projects/niyog.jpg",
-    "category": "job-platform",
-    "year": "2024"
+    "image": "/images/projects/niyog.jpg"
   },
   {
     "id": "pd-2",
@@ -49,11 +47,9 @@
       "Advanced analytics and reporting dashboard",
       "Modular component architecture"
     ],
-    "liveLink": "https://niyoai.com/",
+    "liveLink": "https://niyoai.com",
     "githubLink": "",
-    "image": "/images/projects/niyo.jpg",
-    "category": "recruitment-platform",
-    "year": "2024"
+    "image": "/images/projects/niyo.jpg"
   },
   {
     "id": "pd-3",
@@ -80,10 +76,8 @@
       "Payment gateway integration",
       "Mobile-first responsive design"
     ],
-    "liveLink": "https://webmanza.com/",
+    "liveLink": "https://webmanza.com",
     "githubLink": "",
-    "image": "/images/projects/webmanza.jpg",
-    "category": "ecommerce-platform",
-    "year": "2024"
+    "image": "/images/projects/webmanza.jpg"
   }
 ]
