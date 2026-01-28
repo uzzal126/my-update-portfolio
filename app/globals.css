@@ -5,16 +5,17 @@
   --color-secondary: #5945e6 ;
   --color-heading: #222222;
   --color-paragraph: #364153;
+  --font-inter: 'Inter', sans-serif;
 }
 
 body {
-  @apply bg-white text-gray-700  text-sm;
+  @apply bg-white text-gray-700  text-sm font-inter;
 }
 
 .container {
   padding: 0 15px;
   margin: 0 auto;
-  max-width: 1430px;
+  max-width: 1230px;
 }
 .container-fluid {
   padding: 0 15px;

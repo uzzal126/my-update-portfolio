@@ -11,12 +11,12 @@ const DetailedProjectCard = ({ project }) => {
   return (
     <>
       <div className="bg-linear-to-br from-white to-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 group border border-gray-100">
-        <div className="relative overflow-hidden h-56">
+        <div className="relative overflow-hidden h-60 border-b border-gray-100">
           <Image
             src={project.image}
             alt={project.title}
-            width={460}
-            height={400}
+            fill
+            className="w-full h-full object-cover object-top"
           />
         </div>
 
@@ -27,15 +27,12 @@ const DetailedProjectCard = ({ project }) => {
             </h3>
           </div>
 
-          <div className="mb-5">
-            <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Technologies
-            </h4>
+          <div className="mb-3">
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1.5 bg-linear-to-r from-blue-50 to-indigo-50 text-blue-700 text-xs rounded-lg font-medium hover:shadow-md transition-shadow duration-200"
+                  className="px-3 py-1 bg-linear-to-r from-blue-50 to-indigo-50 text-blue-700 text-xs rounded-lg font-medium"
                 >
                   {tech}
                 </span>
@@ -43,36 +40,13 @@ const DetailedProjectCard = ({ project }) => {
             </div>
           </div>
 
-          <div className="mb-5">
-            <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Key Features
-            </h4>
-            <ul className="space-y-2">
-              {project.features.slice(0, 2).map((feature, index) => (
-                <li
-                  key={index}
-                  className="text-sm text-gray-600 flex items-start"
-                >
-                  <span className="text-primary mr-2 mt-0.5">✓</span>
-                  <span className="line-clamp-1">{feature}</span>
-                </li>
-              ))}
-              {project.features.length > 2 && (
-                <li className="text-xs text-gray-500 flex items-center gap-1 ml-5">
-                  <FaInfoCircle className="text-primary" />
-                  <span>+{project.features.length - 2} more features</span>
-                </li>
-              )}
-            </ul>
-          </div>
-
-          <div className="flex gap-2 pt-5 border-t border-gray-100">
+          <div className="flex gap-2 pt-3 border-t border-gray-100">
             {project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-4 py-2.5 bg-linear-to-r from-primary to-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-200 text-sm font-medium flex-1"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg transition-all duration-200 text-sm font-medium flex-1"
               >
                 <FaExternalLinkAlt className="text-xs" />
                 Live Demo
@@ -83,14 +57,14 @@ const DetailedProjectCard = ({ project }) => {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-800 text-white rounded-lg hover:bg-gray-900 hover:shadow-lg transition-all duration-200 text-sm font-medium"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-200 text-sm font-medium"
               >
                 <FaGithub />
               </a>
             )}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-200 text-sm font-medium cursor-pointer"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-100 text-blue-600 rounded-lg hover:bg-primary hover:text-white transition-all duration-200 text-sm font-medium cursor-pointer"
             >
               <FaInfoCircle />
               Details
@@ -108,13 +82,13 @@ const DetailedProjectCard = ({ project }) => {
         hideFooter={true}
       >
         <div className="space-y-6">
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative overflow-hidden rounded-lg h-80">
             <Image
               src={project.image}
               alt={project.title}
               width={800}
-              height={350}
-              className="w-full "
+              height={320}
+              className="w-full h-full object-cover object-top"
             />
           </div>
 
@@ -157,7 +131,7 @@ const DetailedProjectCard = ({ project }) => {
             </ul>
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3">
             {project.liveLink && (
               <a
                 href={project.liveLink}

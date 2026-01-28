@@ -9,12 +9,12 @@ const ProjectCard = ({ item }) => {
           <div className="dot h-2.5 w-2.5 mx-1 rounded-full bg-[#dadada]" />
           <div className="dot h-2.5 w-2.5 mx-1 rounded-full bg-[#dadada]" />
         </div>
-        <div className="relative block after:absolute after:content-[''] after:inset-0 overflow-hidden after:opacity-50 hover:after:bg-primary hover:after:opacity-80 after:transition-all group">
+        <div className="relative block after:absolute after:content-[''] after:inset-0 overflow-hidden after:opacity-50 hover:after:bg-primary hover:after:opacity-80 after:transition-all group h-50">
           <Image
             src={item.thumbnail}
             alt={item.caption}
-            width={400}
-            height={300}
+            fill
+            className="w-full h-full object-cover object-top"
             priority
           />
           <div className="w-full text-center absolute top-1/2 z-10 transform -translate-y-1/2 space-x-3 transition-all opacity-0 invisible group-hover:opacity-100 group-hover:visible">

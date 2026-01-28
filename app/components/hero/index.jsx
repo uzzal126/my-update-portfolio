@@ -40,12 +40,13 @@ const Hero = () => {
             </div>
           </div>
           <div className="col-span-12 md:col-span-6 order-1 md:order-2">
-            <div className="text-center md:text-right">
+            <div className="flex justify-center md:justify-end rounded-2xl overflow-hidden">
               <Image
                 src="/images/hero/uzzal.jpg"
                 alt="Uzzal Hossain"
                 width="400"
                 height="450"
+                className="rounded-2xl"
               />
             </div>
           </div>
