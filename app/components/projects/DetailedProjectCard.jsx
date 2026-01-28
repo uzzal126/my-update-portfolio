@@ -1,97 +1,189 @@
+"use client";
+
 import Image from "next/image";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { useState } from "react";
+import { FaExternalLinkAlt, FaGithub, FaInfoCircle } from "react-icons/fa";
+import Modal from "../ui/Modal";
 
 const DetailedProjectCard = ({ project }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-      <div className="relative overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={490}
-          height={350}
-          className="object-cover group-hover:scale-150 transition-transform duration-300 shadow-md rounded-md"
-        />
-      </div>
+    <>
+      <div className="bg-linear-to-br from-white to-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 group border border-gray-100">
+        <div className="relative overflow-hidden h-56">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={460}
+            height={400}
+          />
+        </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-3">
-          {project.title}
-        </h3>
+        <div className="p-6">
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-xl font-bold text-gray-900 flex-1 group-hover:text-primary transition-colors duration-300">
+              {project.title}
+            </h3>
+          </div>
 
-        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-          {project.description}
-        </p>
+          <div className="mb-5">
+            <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+              Technologies
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1.5 bg-linear-to-r from-blue-50 to-indigo-50 text-blue-700 text-xs rounded-lg font-medium hover:shadow-md transition-shadow duration-200"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
 
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-700 mb-2">
-            Technologies:
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-blue-50 text-blue-600 text-xs rounded-full font-medium"
+          <div className="mb-5">
+            <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+              Key Features
+            </h4>
+            <ul className="space-y-2">
+              {project.features.slice(0, 2).map((feature, index) => (
+                <li
+                  key={index}
+                  className="text-sm text-gray-600 flex items-start"
+                >
+                  <span className="text-primary mr-2 mt-0.5">✓</span>
+                  <span className="line-clamp-1">{feature}</span>
+                </li>
+              ))}
+              {project.features.length > 2 && (
+                <li className="text-xs text-gray-500 flex items-center gap-1 ml-5">
+                  <FaInfoCircle className="text-primary" />
+                  <span>+{project.features.length - 2} more features</span>
+                </li>
+              )}
+            </ul>
+          </div>
+
+          <div className="flex gap-2 pt-5 border-t border-gray-100">
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 bg-linear-to-r from-primary to-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-200 text-sm font-medium flex-1"
               >
-                {tech}
-              </span>
-            ))}
+                <FaExternalLinkAlt className="text-xs" />
+                Live Demo
+              </a>
+            )}
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-800 text-white rounded-lg hover:bg-gray-900 hover:shadow-lg transition-all duration-200 text-sm font-medium"
+              >
+                <FaGithub />
+              </a>
+            )}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-200 text-sm font-medium cursor-pointer"
+            >
+              <FaInfoCircle />
+              Details
+            </button>
           </div>
         </div>
-
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-700 mb-2">
-            Key Features:
-          </h4>
-          <ul className="space-y-1">
-            {project.features.slice(0, 3).map((feature, index) => (
-              <li
-                key={index}
-                className="text-sm text-gray-600 flex items-start"
-              >
-                <span className="text-primary mr-2">•</span>
-                <span>{feature}</span>
-              </li>
-            ))}
-            {project.features.length > 3 && (
-              <li className="text-sm text-gray-500 italic">
-                +{project.features.length - 3} more features
-              </li>
-            )}
-          </ul>
-        </div>
-
-        <div className="flex gap-3 pt-4 border-t border-gray-200">
-          {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors text-sm font-medium flex-1 justify-center"
-            >
-              <FaExternalLinkAlt className="text-xs" />
-              Live Link
-            </a>
-          )}
-          {project.githubLink && (
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors text-sm font-medium flex-1 justify-center"
-            >
-              <FaGithub />
-              Code
-            </a>
-          )}
-
-          <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors text-sm font-medium flex-1 justify-center">
-            <FaExternalLinkAlt className="text-xs" />
-            See Details
-          </button>
-        </div>
       </div>
-    </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={project.title}
+        size="xl"
+        scrollable={false}
+        hideFooter={true}
+      >
+        <div className="space-y-6">
+          <div className="relative overflow-hidden rounded-lg">
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={800}
+              height={350}
+              className="w-full "
+            />
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              About Project
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              Technologies Used
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-linear-to-r from-blue-50 to-indigo-50 text-blue-700 text-sm rounded-lg font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              Key Features
+            </h3>
+            <ul className="space-y-2">
+              {project.features.map((feature, index) => (
+                <li key={index} className="text-gray-700 flex items-start">
+                  <span className="text-primary mr-3 mt-1 font-bold">✓</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex gap-3 pt-4">
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-linear-to-r from-primary to-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium"
+              >
+                <FaExternalLinkAlt />
+                Visit Live Site
+              </a>
+            )}
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-medium"
+              >
+                <FaGithub />
+                View Code
+              </a>
+            )}
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 };
 

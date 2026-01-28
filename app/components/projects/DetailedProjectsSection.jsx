@@ -11,7 +11,7 @@ const DetailedProjectsSection = () => {
           subTitle="Explore my recent work and personal projects showcasing various technologies and solutions"
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projectsData.map((project) => (
             <DetailedProjectCard key={project.id} project={project} />
           ))}

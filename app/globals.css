@@ -5,8 +5,6 @@
   --color-secondary: #5945e6 ;
   --color-heading: #222222;
   --color-paragraph: #364153;
-  
-  --container-lg: 1200px;
 }
 
 body {
@@ -16,9 +14,13 @@ body {
 .container {
   padding: 0 15px;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1430px;
 }
 .container-fluid {
   padding: 0 15px;
   margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
 }
